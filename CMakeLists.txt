@@ -56,21 +56,21 @@ file(GLOB GEN_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp ${CMAKE_CURRENT_SOURCE_D
 
 source_group("gensilo" FILES ${GEN_SRC})
 
-add_executable(gensilo  
+add_executable(${PROJECT_NAME}
     ${GEN_SRC} 
 )
 
 ########################### include
-target_include_directories(gensilo PUBLIC 
+target_include_directories(${PROJECT_NAME} PUBLIC 
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${SILO_INCLUDE_DIR}
 )
 
 ########################### link
-target_link_libraries(gensilo PRIVATE 
+target_link_libraries(${PROJECT_NAME} PRIVATE 
     ${SILO_LIBRARY} 
 )
 
 if(MSVC)
-    set_target_properties(gensilo PROPERTIES VS_DEBUGGER_ENVIRONMENT "${SILO_INCLUDE_DIR}/../bin;%PATH%")
+    set_target_properties(${PROJECT_NAME} PROPERTIES VS_DEBUGGER_ENVIRONMENT "${SILO_INCLUDE_DIR}/../bin;%PATH%")
 endif()
