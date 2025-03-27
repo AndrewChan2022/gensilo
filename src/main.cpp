@@ -268,7 +268,7 @@ int test_silo_(int argc, char *argv[]) {
 /// rectlinear save error: min_extents/max_extents of yz always 0
 int main(int argc, char *argv[]) {
 
-    printf("hello\n");
+    // printf("hello\n");
 
     testvoxelmat(argc, argv);
 

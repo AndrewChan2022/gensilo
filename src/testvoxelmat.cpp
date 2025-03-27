@@ -8,16 +8,12 @@
 #include <iostream>
 
 const std::string input_file = "D:/data/github/mc/trinity/data/voxel_test.txt";
-const std::string output_file = "voxel_mat5.pdb";
+const std::string output_file = "voxel_mat5.pdb.silo";
 #define zx 144
 #define zy 75
 #define zz 273
 #define Z_CHANGING_FAST 1
 
-
-// #define nx (zx + 1)
-// #define ny (zy + 1)
-// #define nz (zz + 1)
 constexpr int nx = (zx + 1);
 constexpr int ny = (zy + 1);
 constexpr int nz = (zz + 1);
@@ -172,7 +168,7 @@ void ReadMaterial::read(const std::string& file) {
 
             // Add mat2
             if (mat2_no == 255) {
-                printf("mat2_no = 255\n");
+                // printf("mat2_no = 255\n");
             }
             mix_mat.push_back(mat2_no);
             mix_vf.push_back(vf2);
