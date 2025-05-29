@@ -7,11 +7,19 @@
 #include <fstream>
 #include <iostream>
 
-const std::string input_file = "D:/data/github/mc/trinity/data/voxel_test.txt";
-const std::string output_file = "voxel_mat5.pdb.silo";
-#define zx 144
-#define zy 75
-#define zz 273
+// const std::string input_file = "D:/data/github/mc/trinity/data/voxel_test.txt";
+// const std::string output_file = "voxel_mat5.pdb.silo";
+// #define zx 144
+// #define zy 75
+// #define zz 273
+
+const std::string input_file = "e:/solid.txt";
+ const std::string output_file = "e:/solid.silo";
+#define zx 219
+#define zy 219
+#define zz 505
+
+
 #define Z_CHANGING_FAST 1
 
 constexpr int nx = (zx + 1);

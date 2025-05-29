@@ -36,6 +36,15 @@ function(print_all_var)
 endfunction()
 
 
+if (MSVC)
+    set(CMAKE_PREFIX_PATH  
+        "E:/local/silo4.10.3" 
+        "E:/local/hdf5/1.8.19" 
+        ${CMAKE_PREFIX_PATH} 
+    )
+endif()
+
+
 find_package(Silo REQUIRED)
 message(STATUS "Silo_FOUND: ${Silo_FOUND}")
 message(STATUS "Silo_VERSION: ${Silo_VERSION}")
@@ -72,5 +81,5 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 )
 
 if(MSVC)
-    set_target_properties(${PROJECT_NAME} PROPERTIES VS_DEBUGGER_ENVIRONMENT "${SILO_INCLUDE_DIR}/../bin;%PATH%")
+    set_target_properties(${PROJECT_NAME} PROPERTIES VS_DEBUGGER_ENVIRONMENT "PATH=E:/local/silo4.10.3/bin;%PATH%")
 endif()
